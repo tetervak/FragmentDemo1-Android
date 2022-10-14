@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Fragment Demo 1</string>
+
+    <!-- menu items -->
+    <string name="action_about">About</string>
+
+    <!-- about dialog -->
+    <string name="author">Alex Tetervak, Sheridan College, 2022</string>
+
+    <!-- radio button labels / output strings -->
+    <string name="cat_purr">Purr</string>
+    <string name="cat_mew">Mew</string>
+    <string name="cat_hiss">Hiss</string>
+
+    <!-- urgent / not urgent -->
+    <string name="urgent">Urgent</string>
+    <string name="not_urgent">Not Urgent</string>
+
+    <string name="select_message">Select a message</string>
+    <string name="received_message">Received message</string>
+    <string name="undefined">Undefined</string>
+
+    <!-- the button labels -->
+    <string name="send">Send</string>
+    <string name="reply">Reply</string>
+
+    <!-- the activity and fragment labels -->
+    <string name="main_activity">Main Activity</string>
+    <string name="main_fragment">Main Fragment</string>
+    <string name="output_fragment">Output Fragment</string>
+
+    <!-- the Sheridan label -->
+    <string name="sheridan">Sheridan, 2022</string>
+    <string name="send_your_reply">Send your reply</string>
+    <string name="received_reply">Received reply</string>
+
+
+</resources>
