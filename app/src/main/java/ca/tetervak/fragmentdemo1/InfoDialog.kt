@@ -12,13 +12,6 @@ class InfoDialog : DialogFragment() {
         private const val TITLE = "title"
         private const val MESSAGE = "message"
 
-        fun showInfoDialog(
-            fragmentManager: FragmentManager,
-            title: String,
-            message: String
-        ) = newInstance(title, message).show(fragmentManager, null)
-
-
         fun newInstance(title: String, message: String): InfoDialog {
             val fragment = InfoDialog()
             fragment.arguments = bundleOf(TITLE to title, MESSAGE to message)
