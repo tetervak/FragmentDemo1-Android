@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import ca.tetervak.fragmentdemo1.databinding.FragmentOutputBinding
 
 class OutputFragment : Fragment() {
@@ -44,9 +45,9 @@ class OutputFragment : Fragment() {
         binding.replyButton.setOnClickListener {
             val userInput = binding.replyTextInput.text.toString().trim()
             if (userInput.isNotEmpty()) {
-                val reply = bundleOf(REPLY_TEXT_KEY to userInput)
                 val requestKey = args.getString(REQUEST_KEY)!!
-                parentFragmentManager.setFragmentResult(requestKey, reply)
+                val bundle = bundleOf(REPLY_TEXT_KEY to userInput)
+                setFragmentResult(requestKey, bundle)
                 parentFragmentManager.popBackStack()
             } else {
                 binding.replyTextInput.error = "Required Input"
