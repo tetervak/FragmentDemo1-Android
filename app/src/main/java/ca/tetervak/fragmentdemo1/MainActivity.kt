@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.commit
 import ca.tetervak.fragmentdemo1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,9 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, MainFragment())
-                .commit()
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add(R.id.fragment_container, MainFragment.newInstance())
+            }
         }
     }
 

@@ -12,6 +12,8 @@ class MainFragment : Fragment() {
     companion object {
         const val REPLY_REQUEST_KEY = "replyRequest"
         const val REPLY_MESSAGE_KEY = "replyMessage"
+
+        fun newInstance() = MainFragment()
     }
 
     private var _binding: FragmentMainBinding? = null
