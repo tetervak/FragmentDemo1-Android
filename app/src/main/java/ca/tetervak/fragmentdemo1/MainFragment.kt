@@ -30,8 +30,8 @@ class MainFragment : Fragment() {
         binding.sendButton.setOnClickListener { showOutput() }
 
         // set up the listener for the reply result
-        setFragmentResultListener(REPLY_REQUEST_KEY) { _, reply ->
-            val replyMessage = reply.getString(OutputFragment.REPLY_TEXT_KEY)
+        setFragmentResultListener(REPLY_REQUEST_KEY) { _, bundle ->
+            val replyMessage = bundle.getString(OutputFragment.REPLY_TEXT_KEY)
             displayReplyMessage(replyMessage)
         }
 
