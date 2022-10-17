@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.commit
 import ca.tetervak.fragmentdemo1.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -57,12 +58,14 @@ class MainFragment : Fragment() {
         }
 
         // switch the fragment
-        parentFragmentManager.beginTransaction()
-            .addToBackStack(null)
-            .replace(
+        parentFragmentManager.commit {
+            setReorderingAllowed(true)
+            addToBackStack(null)
+            replace(
                 R.id.fragment_container,
                 OutputFragment.newInstance(message, urgent, REPLY_REQUEST_KEY)
-            ).commit()
+            )
+        }
     }
 
     private fun displayReplyMessage(replyMessage: String?) {
