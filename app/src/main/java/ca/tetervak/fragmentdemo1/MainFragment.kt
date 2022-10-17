@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.commit
+import androidx.fragment.app.setFragmentResultListener
 import ca.tetervak.fragmentdemo1.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -29,9 +30,7 @@ class MainFragment : Fragment() {
         binding.sendButton.setOnClickListener { showOutput() }
 
         // set up the listener for the reply result
-        parentFragmentManager.setFragmentResultListener(
-            REPLY_REQUEST_KEY, viewLifecycleOwner
-        ) { _, reply ->
+        setFragmentResultListener(REPLY_REQUEST_KEY) { _, reply ->
             val replyMessage = reply.getString(OutputFragment.REPLY_TEXT_KEY)
             displayReplyMessage(replyMessage)
         }
