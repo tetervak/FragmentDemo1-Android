@@ -33,6 +33,7 @@
     <string name="sheridan">Sheridan, 2022</string>
     <string name="send_your_reply">Send your reply</string>
     <string name="received_reply">Received reply</string>
+    <string name="required_input">Required Input</string>
 
 
 </resources>

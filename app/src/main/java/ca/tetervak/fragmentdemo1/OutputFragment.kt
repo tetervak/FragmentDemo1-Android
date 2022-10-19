@@ -50,7 +50,7 @@ class OutputFragment : Fragment() {
                 setFragmentResult(requestKey, bundle)
                 parentFragmentManager.popBackStack()
             } else {
-                binding.replyTextInput.error = "Required Input"
+                binding.replyTextInput.error = getString(R.string.required_input)
             }
         }
 
